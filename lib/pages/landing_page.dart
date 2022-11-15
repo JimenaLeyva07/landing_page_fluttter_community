@@ -37,13 +37,21 @@ class LandingPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: SizedBox(
           width: double.infinity,
-          height: MediaQuery.of(context).size.width > 480
-              ? window.screen!.height! * 0.86
-              : MediaQuery.of(context).size.height,
+          height: MediaQuery.of(context).size.height < 500
+              ? MediaQuery.of(context).size.height * 1.4
+              : MediaQuery.of(context).size.height < 700
+                  ? MediaQuery.of(context).size.height * 1.1
+                  : MediaQuery.of(context).size.height - 80,
           child: Stack(
             children: [
               CustomPaint(
-                size: Size(double.infinity, window.screen!.height! * 0.52),
+                size: Size(
+                    double.infinity,
+                    MediaQuery.of(context).size.height < 500
+                        ? MediaQuery.of(context).size.height * 0.9
+                        : MediaQuery.of(context).size.height < 700
+                            ? MediaQuery.of(context).size.height * 0.65
+                            : MediaQuery.of(context).size.height * 0.52),
                 painter: WidgetCustom(),
               ),
               const ContentWidget(),
@@ -96,10 +104,10 @@ class ContentWidget extends StatelessWidget {
                 const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
-              children: const [
-                PresentationWidgetMobile(),
-                SizedBox(height: 150),
-                LabelWidgetsMobile()
+              children: [
+                const PresentationWidgetMobile(),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.13),
+                const LabelWidgetsMobile()
               ],
             ),
           );
