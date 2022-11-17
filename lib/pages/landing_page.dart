@@ -54,10 +54,10 @@ class LandingPage extends StatelessWidget {
               )
             ],
           )),
-      body: Column(
-        children: [
-          Expanded(
-            child: SizedBox(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
               width: double.infinity,
               height: bodyHeight,
               child: Stack(
@@ -70,24 +70,25 @@ class LandingPage extends StatelessWidget {
                 ],
               ),
             ),
-          ),
-          Container(
-            width: double.infinity,
-            height: footerHeight,
-            color: const Color(0xFF1D1D1B),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(
-                      left: footerLogoMarginLeft, right: footerLogoMarginRight),
-                  child:
-                      Image.asset('assets/logo_pragma.png', width: footerLogo),
-                )
-              ],
-            ),
-          )
-        ],
+            Container(
+              width: double.infinity,
+              height: footerHeight,
+              color: const Color(0xFF1D1D1B),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(
+                        left: footerLogoMarginLeft,
+                        right: footerLogoMarginRight),
+                    child: Image.asset('assets/logo_pragma.png',
+                        width: footerLogo),
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
