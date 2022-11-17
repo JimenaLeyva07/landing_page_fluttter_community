@@ -10,24 +10,28 @@ class PresentationWidgetDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = width * 0.71111;
-    print(height);
+    print('Altura: $height');
 
-    //Text
-    final sizeboxAllTexts = width * 0.22986;
-    final aleteoTitle = clampDouble(width * 0.0361, 40, 52);
-    final communityText = width * 0.015278;
-    final thinkingText = width * 0.0125;
-    final textSpaceLines = height * 0.0007;
-    final bodytextSpaceLine = height * 0.0009;
+    //Text Size
+    final sizeboxTextSize = clampDouble(width * 0.22986, 320, 370);
+    final titleSize = clampDouble(width * 0.0361, 40, 52);
+    final bodyTextSize = clampDouble(width * 0.015277, 20, 30);
+    final thinkingTextSize = clampDouble(width * 0.0125, 15, 18);
+
+    //Text Interlineado
+    final interlineadoTitle = clampDouble(height * 0.0007, 1.0, 1.5);
+    final interlineadoBodyText = clampDouble(height * 0.0011, 1.0, 1.3);
     final spaceBetweenText = height * 0.02;
 
     //Image
-    final flutterImage = width * 0.35525;
+    final flutterImageWidth = width * 0.35525;
+    final flutterImageHeight = height * 0.435;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SizedBox(
-          width: sizeboxAllTexts,
+          width: sizeboxTextSize,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             //mainAxisAlignment: MainAxisAlignment.center,
@@ -35,30 +39,31 @@ class PresentationWidgetDesktop extends StatelessWidget {
               Text('Aleteo \nColombia',
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: aleteoTitle,
+                      fontSize: titleSize,
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.w600,
-                      height: textSpaceLines)),
+                      height: interlineadoTitle)),
               SizedBox(height: spaceBetweenText),
               Text(
                   'Somos una comunidad dedicada a aprender y compartir conocimiento sobre Flutter.',
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: communityText,
+                      fontSize: bodyTextSize,
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.w300,
-                      height: bodytextSpaceLine)),
+                      height: interlineadoBodyText)),
               SizedBox(height: spaceBetweenText),
               Text('Thinking in Flutter, creating with Dart',
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: thinkingText,
+                      fontSize: thinkingTextSize,
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.w300)),
             ],
           ),
         ),
-        Image.asset('assets/flutter_pajaritos.png', width: flutterImage)
+        Image.asset('assets/flutter_pajaritos.png',
+            width: flutterImageWidth, height: flutterImageHeight)
       ],
     );
   }
@@ -74,18 +79,17 @@ class LabelWidgetsDesktop extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     final height = width * 0.71111;
 
-    final comunidadText = width * 0.02152;
-    final comunidadTextMargin = width * 0.31597;
-    final comunidadTextSpaceLine = height * 0.0009;
+    //Text
+    final comunidadText = clampDouble(width * 0.02152, 20, 35);
+    final sizeboxComunidadSize = clampDouble(width * 0.31597, 300, 520);
+    final comunidadTextInterlineado = clampDouble(height * 0.0009, 1.0, 1.5);
 
-    final socialLogos = width * 0.0375;
+    //Social text & icons
+    final socialLogos = clampDouble(width * 0.0375, 40, 55);
     final socialMargin = width * 0.0215;
 
     return SizedBox(
-      width: comunidadTextMargin,
-      // width: MediaQuery.of(context).size.width >= 1200
-      //     ? MediaQuery.of(context).size.width * 0.30
-      //     : MediaQuery.of(context).size.width * 0.60,
+      width: sizeboxComunidadSize,
       child: Column(
         children: [
           Text(
@@ -96,7 +100,7 @@ class LabelWidgetsDesktop extends StatelessWidget {
                 fontSize: comunidadText,
                 fontFamily: 'Poppins',
                 fontWeight: FontWeight.w600,
-                height: comunidadTextSpaceLine),
+                height: comunidadTextInterlineado),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
