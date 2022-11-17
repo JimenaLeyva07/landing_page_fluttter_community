@@ -110,13 +110,23 @@ class ContentWidget extends StatelessWidget {
     // Body
     final spaceBetweenWidgets = clampDouble(bodyHeight * 0.0146, 50, 70);
 
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        const PresentationWidgetDesktop(),
-        SizedBox(height: spaceBetweenWidgets),
-        const LabelWidgetsDesktop()
-      ],
+    return SizedBox(
+      width: width,
+      height: bodyHeight,
+      child: SingleChildScrollView(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(minHeight: bodyHeight),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              const PresentationWidgetDesktop(),
+              SizedBox(height: spaceBetweenWidgets),
+              const LabelWidgetsDesktop()
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

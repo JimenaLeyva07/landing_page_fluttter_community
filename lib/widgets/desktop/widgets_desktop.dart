@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'dart:html' as html;
 
 class PresentationWidgetDesktop extends StatelessWidget {
   const PresentationWidgetDesktop({
@@ -133,11 +134,30 @@ class LabelWidgetsDesktop extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset('assets/icon_instagram.png', width: socialLogos),
+              GestureDetector(
+                  child: Image.asset('assets/icon_instagram.png',
+                      width: socialLogos),
+                  onTap: () {
+                    html.window.open(
+                        'https://www.instagram.com/somosaleteo/', 'instagram');
+                  }),
               SizedBox(width: socialMargin),
-              Image.asset('assets/icon_facebook.png', width: socialLogos),
+              GestureDetector(
+                  child: Image.asset('assets/icon_facebook.png',
+                      width: socialLogos),
+                  onTap: () {
+                    html.window.open(
+                        'https://www.facebook.com/somosaleteo', 'facebook');
+                  }),
               SizedBox(width: socialMargin),
-              Image.asset('assets/icon_tiktok.png', width: socialLogos)
+              GestureDetector(
+                child:
+                    Image.asset('assets/icon_tiktok.png', width: socialLogos),
+                onTap: () {
+                  html.window
+                      .open('https://www.tiktok.com/@somosaleteo', 'tiktok');
+                },
+              )
             ],
           )
         ],

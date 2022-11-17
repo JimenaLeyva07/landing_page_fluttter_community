@@ -10,11 +10,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Material App',
+      title: 'Aleteo - Somos Aleteo',
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/':(_) => const LandingPage(),
+        '/': (_) => const LandingPage(),
       },
     );
   }
