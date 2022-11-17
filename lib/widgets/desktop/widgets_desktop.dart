@@ -10,7 +10,46 @@ class PresentationWidgetDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = width * 0.71111;
-    print('Altura: $height');
+
+    //Image
+    final flutterImageWidth = width * 0.35525;
+    final flutterImageHeight = height * 0.435;
+
+    //Padding
+    //final paddingMargin = width
+
+    return width > 600
+        ? Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const PresentationTextWidget(),
+              Image.asset('assets/flutter_pajaritos.png',
+                  width: flutterImageWidth, height: flutterImageHeight)
+            ],
+          )
+        : Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset('assets/flutter_pajaritos.png',
+                    width: flutterImageWidth, height: flutterImageHeight),
+                const PresentationTextWidget()
+              ],
+            ),
+          );
+  }
+}
+
+class PresentationTextWidget extends StatelessWidget {
+  const PresentationTextWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = width * 0.71111;
 
     //Text Size
     final sizeboxTextSize = clampDouble(width * 0.22986, 320, 370);
@@ -23,48 +62,37 @@ class PresentationWidgetDesktop extends StatelessWidget {
     final interlineadoBodyText = clampDouble(height * 0.0011, 1.0, 1.3);
     final spaceBetweenText = height * 0.02;
 
-    //Image
-    final flutterImageWidth = width * 0.35525;
-    final flutterImageHeight = height * 0.435;
-
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        SizedBox(
-          width: sizeboxTextSize,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            //mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('Aleteo \nColombia',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: titleSize,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w600,
-                      height: interlineadoTitle)),
-              SizedBox(height: spaceBetweenText),
-              Text(
-                  'Somos una comunidad dedicada a aprender y compartir conocimiento sobre Flutter.',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: bodyTextSize,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w300,
-                      height: interlineadoBodyText)),
-              SizedBox(height: spaceBetweenText),
-              Text('Thinking in Flutter, creating with Dart',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: thinkingTextSize,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w300)),
-            ],
-          ),
-        ),
-        Image.asset('assets/flutter_pajaritos.png',
-            width: flutterImageWidth, height: flutterImageHeight)
-      ],
+    return SizedBox(
+      width: sizeboxTextSize,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        //mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text('Aleteo \nColombia',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: titleSize,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w600,
+                  height: interlineadoTitle)),
+          SizedBox(height: spaceBetweenText),
+          Text(
+              'Somos una comunidad dedicada a aprender y compartir conocimiento sobre Flutter.',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: bodyTextSize,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w300,
+                  height: interlineadoBodyText)),
+          SizedBox(height: spaceBetweenText),
+          Text('Thinking in Flutter, creating with Dart',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: thinkingTextSize,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w300)),
+        ],
+      ),
     );
   }
 }
