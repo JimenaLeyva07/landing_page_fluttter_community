@@ -11,7 +11,6 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = width * 0.71111;
-    print('Ancho $width');
 
     //Appbar
     final appbarLogoMarginRight = width * 0.0034;
@@ -42,7 +41,8 @@ class LandingPage extends StatelessWidget {
               SizedBox(
                 width: appbarLogoMarginLeft,
               ),
-              Image.asset('assets/logo_aleteo.png', width: appbarLogoWidth),
+              Image.asset('assets/images/logo_aleteo.png',
+                  width: appbarLogoWidth),
               SizedBox(width: appbarLogoMarginRight),
               Text(
                 'aleteo',
@@ -81,7 +81,7 @@ class LandingPage extends StatelessWidget {
                     padding: EdgeInsets.only(
                         left: footerLogoMarginLeft,
                         right: footerLogoMarginRight),
-                    child: Image.asset('assets/logo_pragma.png',
+                    child: Image.asset('assets/images/logo_pragma.png',
                         width: footerLogo),
                   )
                 ],

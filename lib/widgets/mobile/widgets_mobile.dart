@@ -21,7 +21,7 @@ class PresentationWidgetMobile extends StatelessWidget {
                 fontWeight: FontWeight.w600,
                 height: 1.0)),
         const SizedBox(height: 10),
-        Image.asset('assets/flutter_pajaritos.png',
+        Image.asset('assets/images/flutter_pajaritos.png',
             width: MediaQuery.of(context).size.width * 0.55),
         const SizedBox(height: 20),
         const Text(
@@ -72,11 +72,11 @@ class LabelWidgetsMobile extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset('assets/icon_instagram.png'),
+              Image.asset('assets/images/icon_instagram.png'),
               const SizedBox(width: 30),
-              Image.asset('assets/icon_facebook.png'),
+              Image.asset('assets/images/icon_facebook.png'),
               const SizedBox(width: 30),
-              Image.asset('assets/icon_tiktok.png')
+              Image.asset('assets/images/icon_tiktok.png')
             ],
           )
         ],

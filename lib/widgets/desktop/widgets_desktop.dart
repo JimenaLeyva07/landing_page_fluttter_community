@@ -24,7 +24,7 @@ class PresentationWidgetDesktop extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const PresentationTextWidget(),
-              Image.asset('assets/flutter_pajaritos.png',
+              Image.asset('assets/images/flutter_pajaritos.png',
                   width: flutterImageWidth, height: flutterImageHeight)
             ],
           )
@@ -33,7 +33,7 @@ class PresentationWidgetDesktop extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('assets/flutter_pajaritos.png',
+                Image.asset('assets/images/flutter_pajaritos.png',
                     width: flutterImageWidth, height: flutterImageHeight),
                 const PresentationTextWidget()
               ],
@@ -135,7 +135,7 @@ class LabelWidgetsDesktop extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               GestureDetector(
-                  child: Image.asset('assets/icon_instagram.png',
+                  child: Image.asset('assets/images/icon_instagram.png',
                       width: socialLogos),
                   onTap: () {
                     html.window.open(
@@ -143,7 +143,7 @@ class LabelWidgetsDesktop extends StatelessWidget {
                   }),
               SizedBox(width: socialMargin),
               GestureDetector(
-                  child: Image.asset('assets/icon_facebook.png',
+                  child: Image.asset('assets/images/icon_facebook.png',
                       width: socialLogos),
                   onTap: () {
                     html.window.open(
@@ -151,8 +151,8 @@ class LabelWidgetsDesktop extends StatelessWidget {
                   }),
               SizedBox(width: socialMargin),
               GestureDetector(
-                child:
-                    Image.asset('assets/icon_tiktok.png', width: socialLogos),
+                child: Image.asset('assets/images/icon_tiktok.png',
+                    width: socialLogos),
                 onTap: () {
                   html.window
                       .open('https://www.tiktok.com/@somosaleteo', 'tiktok');
